@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace OOP_c_2_lab1
+namespace OOP_c_2_lab2
 {
     public class Student
     {
-        public int Id { get; set; }
-        public string Vardas { get; set; }
-        public string ElPastas { get; set; }
-        public string Vidurkis { get; set; }
+        public int Id { get; }
+        public string Vardas { get; }
+        public string ElPastas { get; }
+        public double Vidurkis { get; }
 
-        public Student(int id, string vardas, string elPastas, string vidurkis)
+        public Student(int id, string vardas, string elPastas, double vidurkis)
         {
             Id = id;
             Vardas = vardas;
@@ -19,7 +19,7 @@ namespace OOP_c_2_lab1
 
         public override string ToString()
         {
-            return $"ID: {Id}, Vardas: {Vardas}, El. Paštas: {ElPastas}, Vidurkis: {Vidurkis}";
+            return $"ID: {Id}, Vardas: {Vardas}, El. Paštas: {ElPastas}, Vidurkis: {Vidurkis:F1}";
         }
     }
 }

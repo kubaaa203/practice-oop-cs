@@ -1,35 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OOP_c_2_lab1
+namespace OOP_c_2_lab2
 {
     public class Group
     {
-        public string Pavadinimas { get; set; }
-        public List<Student> Studentas { get; set; }
+        public string Pavadinimas { get; }
+        public List<Student> Studentai { get; } = new();
 
         public Group(string pavadinimas)
         {
             Pavadinimas = pavadinimas;
-            Studentas = new List<Student>();
         }
 
-        public void AddStudent(Student student)
+        public void AddStudent(Student studentas)
         {
-            Studentas.Add(student);
-            Console.WriteLine($"Studentas {student.Vardas} pridėtas į grupę {Pavadinimas}");
+            Studentai.Add(studentas);
         }
 
-        public void PrintAll()
+        public string PrintAll()
         {
-            Console.WriteLine($"\nGrupė: {Pavadinimas}");
-            Console.WriteLine("Studentų sąrašas:");
-            Console.WriteLine("****************************");
-            foreach (var student in Studentas)
-            {
-                Console.WriteLine(student.ToString());
-            }
-            Console.WriteLine($"Išviso studentų: {Studentas.Count}\n");
+            var lines = new List<string>();
+            lines.Add($"\nGrupė: {Pavadinimas}");
+            lines.Add("Studentų sąrašas:");
+            lines.Add("****************************");
+            foreach (var studentas in Studentai)
+                lines.Add(studentas.ToString());
+            lines.Add($"Išviso studentų: {Studentai.Count}\n");
+            return string.Join("\n", lines);
         }
     }
 }

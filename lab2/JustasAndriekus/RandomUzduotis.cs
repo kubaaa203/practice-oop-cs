@@ -1,5 +1,5 @@
 ﻿using System;
-using OOP_c_2_lab1;
+using OOP_c_2_lab2;
 
 //Random užduoties gavimas
 public class RandomUzduotis
